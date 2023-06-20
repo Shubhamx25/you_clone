@@ -17,7 +17,7 @@ a {
 
 ::-webkit-scrollbar-thumb {
   background-color: rgb(114, 113, 113);
-  border-radius: 10px;
+  border-radius: 6px;
   height: 200px;
 }
 
@@ -26,7 +26,7 @@ a {
 }
 
 .category-btn:hover {
-  background-color: #FC1503 !important;
+  background-color: #353935 !important;
   color: white !important;
 }
 
@@ -58,7 +58,7 @@ a {
 
   padding: 7px 15px;
   margin: 10px 0px;
-  border-radius: 20px;
+  border-radius: 6px;
   transition: all 0.3s ease;
 }
 
