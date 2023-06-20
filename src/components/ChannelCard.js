@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { demoProfilePicture } from "../utils/constants";
 
-const ChannelCard = ({ channelDetail}) => {
+const ChannelCard = ({ channelDetail, marginTop}) => {
   return (
     <Box
         sx={{
@@ -15,10 +15,10 @@ const ChannelCard = ({ channelDetail}) => {
            alignItems: 'center',
            width: { sx: '356px', md: '320px'},
            height: '326px',
-           margin:'auto'
-
+           margin:'auto',
+           marginTop
         }}>
-       <Link /* to={`/channel/${channelDetail?.id?.channelId}`} */ href='https://www.google.com'>
+       <Link to={`/channel/${channelDetail?.id?.channelId}`}>
           <CardContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', textAlign:'center', color: '#fff'}}>
             <CardMedia 
              image={channelDetail?.snippet?.thumbnails?.high?.url || demoProfilePicture} 
