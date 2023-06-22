@@ -11,7 +11,7 @@ const VideoDetail = () => {
   const { id } = useParams();
   const [ videoDetail, SetVideoDetail] = useState(null);
   const [videos, setVideos] = useState(null);
-
+  
 
   useEffect(() => {
     fetchFromApi(`videos?part=snippet,statistics&id=${id}`)
