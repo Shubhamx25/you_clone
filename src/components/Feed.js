@@ -8,11 +8,26 @@ const Feed = () => {
 
   const [selectedCategory, setSelectedCategory] = useState('New');
   const [videos, setVideos ] = useState([]);
-  
+  const [isTabChanged, setIsTabChanged] = useState(false);
+
+  useEffect(() => {
+    document.addEventListener("visibilitychange", (event) => {
+      if (document.visibilityState === "hidden") {
+       setIsTabChanged(true)
+       console.log('Tab changed');
+      }else{
+        setIsTabChanged(false)
+      } 
+    });
+  }, [document.visibilityState])
+
   useEffect(() => {
     fetchFromApi(`search?part=snippet&q=${selectedCategory}`)
     .then((data) => setVideos(data.items))
   },[selectedCategory]);
+
+  
+  
 
   return (
      <Stack sx={{

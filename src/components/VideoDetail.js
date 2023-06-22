@@ -12,6 +12,7 @@ const VideoDetail = () => {
   const [ videoDetail, SetVideoDetail] = useState(null);
   const [videos, setVideos] = useState(null);
 
+
   useEffect(() => {
     fetchFromApi(`videos?part=snippet,statistics&id=${id}`)
     .then(data => SetVideoDetail(data.items[0]) );
@@ -31,7 +32,9 @@ const VideoDetail = () => {
      viewCount= statistics.viewCount;
      likeCount = statistics.likeCount;
   }
-
+  
+ 
+ 
   return (
     <Box minHeight='95vh'>
       <Stack direction={{xs: 'column', md:'row'}}>
@@ -41,11 +44,15 @@ const VideoDetail = () => {
             position: 'sticky',
             top: '86px' 
           }}>
-             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className='react-player' controls />
-             <Typography color='#fff' variant="h5" fontWeight='bold' py={1} px={2}>{title} </Typography>
-             <Stack direction='row' justifyContent='space-between' sx={{
-              color: '#fff'
-             }} py={1} px={2}>
+             
+             <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} className='react-player' controls playing={true}
+               />
+              
+              
+             <Typography color='#fff' variant="h5" fontWeight='bold' py={1} px={2}>
+                 {title}
+              </Typography>
+             <Stack direction='row' justifyContent='space-between' sx={{color: '#fff'}} py={1} px={2}>
                 <Link to={`/channel/${channelId}`} color="#fff">
                     <Typography color='#fff' variant={{ sm:'h6', md: 'h5'}}>
                       {channelTitle}

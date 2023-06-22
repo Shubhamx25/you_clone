@@ -4,7 +4,10 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import { Navbar, Feed, SearchFeed, VideoDetail, ChannelDetail} from "./components";
 
-const App = () => (
+
+const App = () => {
+
+return(
     <BrowserRouter>
      <Box sx={{backgroundColor: '#0f0f0f'}}>
         <Navbar/>
@@ -17,6 +20,7 @@ const App = () => (
     </Box>
     </BrowserRouter>   
   );
+}
 
 
 export default App
