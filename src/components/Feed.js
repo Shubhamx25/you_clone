@@ -28,16 +28,18 @@ const Feed = () => {
                     setSelectedCategory={setSelectedCategory} 
             />
             <Typography className="copyright" variant="body2" sx={{
-              mt: 2,
+              mt: 1,
               color: '#fff',
-              display: {sx: 'none',sm:'none', md: 'flex'}
+           
+              display: {sx: 'none',sm:'none', md: 'flex'},
+               zIndex:'100'
             }}> 
-              Copyright &copy;2023
+             <span style={{ transform: 'scale(1, 1.3)', letterSpacing:'0.4px', opacity:'0.8'}}>Made by Shubham</span>
             </Typography>
         </Box>
         
         
-          <Box sx={{
+          <Box className="content-box" sx={{
                           overflowY: 'auto',
                           height:'90vh',
                           flex: 6.5,

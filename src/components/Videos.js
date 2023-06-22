@@ -5,7 +5,7 @@ const Videos = ({ videos, direction }) => {
   if(!videos?.length) return 'Loading...';
  
   return (
-    <Stack direction={ direction || 'row' } flexWrap='wrap' justifyContent='start' gap={2.5} width='100%'>
+    <Stack direction={ direction || 'row' } flexWrap='wrap' justifyContent='center' gap={2} className="video-box" width='100%'>
     
 
       {videos.map((item, idx) => (
